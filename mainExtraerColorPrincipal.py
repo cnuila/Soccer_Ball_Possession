@@ -3,6 +3,15 @@ import cv2 as cv
 import numpy as np
 from sklearn import cluster
 import matplotlib.pyplot as plt
+import os
+import csv
+
+def cargarImagenes(directorio):
+    fotos = []
+    for archivo in sorted(os.listdir(directorio)):
+        img = cv.imread(os.path.join(directorio,archivo))
+        fotos.append((archivo, img))
+    return fotos
 
 def histograma(modelo):
     numLabels = np.arange(0,len(np.unique(modelo.labels_)) + 1)
@@ -14,23 +23,23 @@ def histograma(modelo):
     return hist
 
 def sacarColores(hist, centroides):
-    bar = np.zeros((50,300,3),dtype="uint8")
-
-    startX = 0
+    #bar = np.zeros((50,300,3),dtype="uint8")
+    #startX = 0
 
     for (percent, color) in zip(hist, centroides):         
-        #if not esVerde(color):
-        #    break
-        print("color=",color)
-        print("percent=",percent)
-        endX = startX + (percent * 300)
-        cv.rectangle(bar,(int(startX),0),(int(endX),60),color.astype("uint8").tolist(),-1)       
-        startX = endX
+        if not esVerde(color):
+            break        
+
+    #print("color=",color)
+    #print("percent=",percent)
+    #endX = startX + (percent * 300)
+    #cv.rectangle(bar,(int(startX),0),(int(endX),60),color.astype("uint8").tolist(),-1)       
+    #startX = endX        
             
-    plt.figure()
-    plt.axis("off")
-    plt.imshow(bar)
-    plt.show()
+    #plt.figure()
+    #plt.axis("off")
+    #plt.imshow(bar)
+    #plt.show()
                           
     return color
 
@@ -55,11 +64,22 @@ def sacarColorUniforme(img):
     hist = histograma(kmeans)
     colorUniforme = sacarColores(hist,kmeans.cluster_centers_)
 
-    print(colorUniforme)
+    return colorUniforme
+
+def guardarDatos(nombreArchivo, datos):
+    with open(nombreArchivo, 'w') as file:
+        writer = csv.writer(file)
+        writer.writerow(["R","G","B"])
+        writer.writerows(datos)
 
 def main(argv):
-    img = cv.imread(argv[0])
-    sacarColorUniforme(img)              
+    fotos = cargarImagenes(argv[0])
+    colores = []
+    
+    for nombreArchivo,foto in fotos:
+        colores.append(sacarColorUniforme(foto))
+    
+    guardarDatos(argv[1], colores)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

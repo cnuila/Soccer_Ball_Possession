@@ -1,116 +1,371 @@
 {
-   "sa00.jpg": {
+   "player000.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa01.jpg": {
+   "player001.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa02.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa03.jpg": {
+   "player002.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa04.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa05.jpg": {
+   "player003.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa06.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa07.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa08.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa09.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa10.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa11.jpg": {
+   "player004.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa12.jpg": {
+   "player005.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa13.jpg": {
+   "player006.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player007.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player008.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player009.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player010.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player011.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player012.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player013.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player014.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player015.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player016.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player017.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player018.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player019.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player020.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player021.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player022.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player023.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player024.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player025.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player026.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player027.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa14.jpg": {
+   "player028.jpg": {
       "perteneceA": "Equipo B"
    },
-   "sa15.jpg": {
+   "player029.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player030.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa16.jpg": {
+   "player031.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player032.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa17.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa18.jpg": {
+   "player033.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa19.jpg": {
-      "perteneceA": "Equipo B"
+   "player034.jpg": {
+      "perteneceA": "Equipo A"
    },
-   "sa20.jpg": {
+   "player035.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa21.jpg": {
+   "player036.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player037.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player038.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player039.jpg": {
       "perteneceA": "Equipo A"
    },
-   "sa22.jpg": {
+   "player040.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player041.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player042.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player043.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player044.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player045.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player046.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player047.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa23.jpg": {
+   "player048.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player049.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa24.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa25.jpg": {
-      "perteneceA": "Equipo A"
-   },
-   "sa26.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa27.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa28.jpg": {
-      "perteneceA": "Equipo A"
-   },
-   "sa29.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa30.jpg": {
-      "perteneceA": "Equipo A"
-   },
-   "sa31.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa32.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa33.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa34.jpg": {
-      "perteneceA": "Equipo B"
-   },
-   "sa35.jpg": {
-      "perteneceA": "Equipo A"
-   },
-   "sa36.jpg": {
+   "player050.jpg": {
       "perteneceA": "Ninguno"
    },
-   "sa37.jpg": {
+   "player051.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player052.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player053.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player054.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player055.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player056.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player057.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player058.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player059.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player060.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player061.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player062.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player063.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player064.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player065.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player066.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player067.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player068.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player069.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player070.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player071.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player072.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player073.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player074.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player075.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player076.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player077.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player078.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player079.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player080.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player081.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player082.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player083.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player084.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player085.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player086.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player087.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player088.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player089.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player090.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player091.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player092.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player093.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player094.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player095.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player096.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player097.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player098.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player099.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player100.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player101.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player102.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player103.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player104.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player105.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player106.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player107.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player108.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player109.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player110.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player111.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player112.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player113.jpg": {
+      "perteneceA": "Ninguno"
+   },
+   "player114.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player115.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player116.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player117.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player118.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player119.jpg": {
+      "perteneceA": "Equipo A"
+   },
+   "player120.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player121.jpg": {
+      "perteneceA": "Equipo B"
+   },
+   "player122.jpg": {
       "perteneceA": "Equipo B"
    }
 }

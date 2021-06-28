@@ -81,30 +81,24 @@ def imprimirMatrizConfusion(clase, matriz):
         print("")
         cont+=1 
         
-def entrenar(colorFotos, clases, clasificadorSalida):    
+def evaluar(clasificador, scaler, x, y):
     
-    scaler = preprocessing.StandardScaler()
-    datosNormalizados = scaler.fit_transform(colorFotos)
+    datosNormalizados = scaler.transform(x)
 
-    x_entrenamiento = datosNormalizados
-    y_entrenamiento = clases
+    x_prueba = datosNormalizados
+    y_prueba = y
 
-    #con datos del cross validation
-    svc = svm.SVC(gamma=5.5712,C=20.3)
-    svc.fit(x_entrenamiento,y_entrenamiento)
+    y_pred = clasificador.predict(x_prueba)
 
-    y_pred = svc.predict(x_entrenamiento)
-
-    joblib.dump((scaler,svc),clasificadorSalida)
-
-    estadisticasPorClase(y_entrenamiento,y_pred)
+    estadisticasPorClase(y_prueba,y_pred)
 
 def main(argv):
     colorFotos = pd.read_csv(argv[0])
     clases = leerJSON(argv[1])    
-    clasificadorSalida = argv[2]
+    scaler, clasificador = joblib.load(argv[2])
 
-    entrenar(colorFotos,clases, clasificadorSalida)
+    evaluar(clasificador,scaler,colorFotos,clases)
+    
 
 if __name__ == "__main__":
     main(sys.argv[1:])
