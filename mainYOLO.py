@@ -1,48 +1,55 @@
+from mainExtraerColorPrincipal import sacarColorUniforme
 import cv2
 import sys
+import joblib
 import numpy as np
+from sklearn import svm, preprocessing
 
 def deteccionPlayerconBalon(CordenadasJugadores, cordenadaPelota, pelotaD, colors, img, font, pelotaNod, pos):
-    # Comparacion de distrancias
+    # Comparacion de distancias
     jugadorConBalonEncontrado = []
     playersOnscreen = len(CordenadasJugadores)
-    print("cuantos :" + str(len(CordenadasJugadores)))
-    if len(cordenadaPelota):
+    #print("cuantos :" + str(len(CordenadasJugadores)))
+    if len(cordenadaPelota): 
         pelotaD = pelotaD + 1
         for i in range(playersOnscreen):
             color = colors[i]
             x1, y1, w1, h1 = cordenadaPelota
             x2, y2, w2, h2 = CordenadasJugadores[i]
-
             if x1 < x2:
                 distancia_pixeles = abs(x2 - (x1+w1))
                 if distancia_pixeles < 20:
                     pos = pos + 1
                     # Dice que jugador tiene la pelota
-                    print("Jugador " + str(i) +
-                          "tiene la pelota, pixels:" + str(distancia_pixeles))
-                    cv2.rectangle(img, (x2-(x2 - x1), y2),
-                                  (x2+w2, y2+h2), color, 2)
-                    cv2.putText(img, "Player con pelota",
-                                (x2, y2+20), font, 2, (255, 255, 255), 2)
+                    #print("Jugador " + str(i) +
+                    #      "tiene la pelota, pixels:" + str(distancia_pixeles))                                       
+
+                    #cv2.rectangle(img, (x2-(x2 - x1), y2),
+                    #              (x2+w2, y2+h2), color, 2)
+                    #cv2.putText(img, "Player con pelota",
+                    #            (x2, y2+20), font, 2, (255, 255, 255), 2)
                     jugadorConBalonEncontrado = CordenadasJugadores[i]
+                    break
             else:
                 distancia_pixeles = abs(x1 - (x2+w2))
                 if distancia_pixeles < 20:
                     pos = pos + 1
                     # Dice que jugador tiene la pelota
-                    print("Jugador  " + str(i) +
-                          "tiene la pelota, pixels:" + str(distancia_pixeles))
-                    cv2.rectangle(
-                        img, (x2, y2), (x1+w1, y1+h1), color, 2)
-                    cv2.putText(img, "Player con pelota",
-                                (x2, y2+20), font, 2, (255, 255, 255), 2)
+                    #print("Jugador  " + str(i) +
+                    #      "tiene la pelota, pixels:" + str(distancia_pixeles))
+                    
+                    #cv2.rectangle(
+                    #    img, (x2, y2), (x1+w1, y1+h1), color, 2)
+                    #cv2.putText(img, "Player con pelota",
+                    #            (x2, y2+20), font, 2, (255, 255, 255), 2)
                     jugadorConBalonEncontrado = CordenadasJugadores[i]
-    else:
+                    break
+    else:      
         pelotaNod = pelotaNod + 1
+        
     return pelotaNod, pelotaD, pos, jugadorConBalonEncontrado
 
-def procesamientoVideo(video):
+def procesamientoVideo(video, scaler, clasificador):
     net = cv2.dnn.readNet('./Yolo/yolov3.weights', './Yolo/yolov3.cfg')
     classes = []
     frames = 0
@@ -54,6 +61,9 @@ def procesamientoVideo(video):
 
     cap = cv2.VideoCapture(video)
     # img = cv2.imread('image2.jpg')
+
+    equipoA = 0
+    equipoB = 0
 
     while True:
         frames = frames + 1
@@ -100,10 +110,10 @@ def procesamientoVideo(video):
         # NMSBoxes quita todos esos bounding boxes que estan unos encima de otros, y solo deja 1 para dicho objeto
         indexes = cv2.dnn.NMSBoxes(bboxes, confianzas, 0.5, 0.4)
         font = cv2.FONT_HERSHEY_PLAIN
-        print("----------------------")
-        print(indexes)
-        print("------------------")
-        print(indexes.flatten())
+        ##print("----------------------")
+        ##print(indexes)
+        ##print("------------------")
+        ##print(indexes.flatten())
         colors = np.random.uniform(0, 255, size=(len(bboxes), 3))
         if len(indexes) > 0:
             # se usa el metodo flatten para que la matriz extraida se haga una lista y poder recorrerla
@@ -126,25 +136,51 @@ def procesamientoVideo(video):
                     confianzaDetectada = str(round(confianzas[i], 2))
                     color = colors[i]
                     # metodo para la deteccion del player con Balon
-                    pelotaNod, pelotaD, pos, jugadorConBalon = deteccionPlayerconBalon(
-                        CordenadasJugadores, cordenadaPelota, pelotaD, colors, img, font, pelotaNod, pos)
+                    ##pelotaNod, pelotaD, pos, jugadorConBalon = deteccionPlayerconBalon(
+                        ##CordenadasJugadores, cordenadaPelota, pelotaD, colors, img, font, pelotaNod, pos)
                     # se colorea el BBox si es un jugador que no tiene el balon
                     #if jugadorConBalon != bboxes[i] and bboxes[i] != cordenadaPelota:
                         #cv2.rectangle(img, (x, y), (x+w, y+h), color, 2)
                         #cv2.putText(img, label+" "+confianzaDetectada, (x, y+20),
-                        #            font, 2, (255, 255, 255), 2)                      
+                        #            font, 2, (255, 255, 255), 2)  
 
-        print("Frames:")
-        print(frames)
-        print("Se vio la pelota en esta cantidad de frames:")
-        print(pelotaD)
-        print("No se vio la pelota en esta cantidad de frames:")
-        print(pelotaNod)
-        print("Jugador controlaba la pelota en esta cantidad de frames:")
-        print(pos)
+        pelotaNod, pelotaD, pos, jugadorConBalon = deteccionPlayerconBalon(
+                        CordenadasJugadores, cordenadaPelota, pelotaD, colors, img, font, pelotaNod, pos)                    
+        #print("jugador con balon" + str(jugadorConBalon))
+        if len(jugadorConBalon) != 0:
+            x = jugadorConBalon[0]
+            y = jugadorConBalon[1]
+            w = jugadorConBalon[2]
+            h = jugadorConBalon[3]
+            imgCropped = img[y:y+h,x:x+w]
+            colores = sacarColorUniforme(imgCropped)
+            datos = scaler.transform([colores])
+            equipo = clasificador.predict(datos)
+            if equipo[0] == "Equipo A":
+                equipoA += 1
+            elif equipo[0] == "Equipo B":
+                equipoB += 1
+                            
+        #print("Frames:")
+        #print(frames)
+        #print("Se vio la pelota en esta cantidad de frames:")
+        #print(pelotaD)
+        #print("No se vio la pelota en esta cantidad de frames:")
+        #print(pelotaNod)
+        #print("Jugador controlaba la pelota en esta cantidad de frames:")
+        #print(pos)
+
+        posesionTotal = equipoA + equipoB
+        
+        if posesionTotal != 0:
+            posesionA = equipoA / posesionTotal
+            print("Posesion del equipo A:", posesionA*100)
+            posesionB = equipoB / posesionTotal
+            print("Posesion del equipo B:", posesionB*100)
+
         imS = cv2.resize(img, (960, 540))
         cv2.imshow('Image', imS)
-        key = cv2.waitKey(0)
+        key = cv2.waitKey(5)
         if key == 27:
             break
 
@@ -152,7 +188,8 @@ def procesamientoVideo(video):
     cv2.destroyAllWindows()
 
 def main(argv):
-    procesamientoVideo(argv[0])
+    scaler, clasificador = joblib.load(argv[1])
+    procesamientoVideo(argv[0], scaler, clasificador)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
